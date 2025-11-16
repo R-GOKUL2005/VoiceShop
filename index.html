@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoiceShop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>VoiceShop</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="laptops.html">Laptops</a> |
+    <a href="smartphones.html">Smartphones</a> |
+    <a href="headphones.html">Headphones</a> |
+    <a href="smartwatches.html">Smartwatches</a> |
+    <a href="powerbanks.html">Power Banks</a> |
+    <a href="adaptors.html">Adaptors</a> |
+    <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+  <input 
+    type="text" 
+    id="searchBox" 
+    placeholder="Search products..." 
+    onkeyup="searchProducts()"
+    style="margin: 15px; padding: 8px; width: 250px;"
+>
+
+</header>
+
+<main>
+  <h2 id="pageTitle">Featured Products</h2>
+  <div id="productsGrid"></div>
+</main>
+
+<button id="startVoice">🎤</button>
+<p id="spokenText"></p>
+
+<script src="script.js"></script> 
+<script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    renderFeaturedProducts(); 
+    updateCartCount();
+    document.getElementById('startVoice').onclick=()=>startVoiceAssistant();
+  });
+</script>
+
+</body>
+</html>

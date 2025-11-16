@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smartwatches - VoiceShop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Smartwatches</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="laptops.html">Laptops</a> |
+      <a href="smartphones.html">Smartphones</a> |
+      <a href="headphones.html">Headphones</a> |
+      <a href="powerbanks.html">Power Banks</a> |
+      <a href="adaptors.html">Adaptors</a> |
+      <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="pageTitle">Smartwatches</h2>
+    <div id="productsGrid" class="category-grid-centered"></div>
+  </main>
+
+  <button id="startVoice">Start Voice Assistant</button>
+  <p id="spokenText"></p>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCategoryProducts('smartwatch');
+      updateCartCount();
+      document.getElementById('startVoice').onclick = () => startVoiceAssistant();
+    });
+  </script>
+</body>
+</html>
